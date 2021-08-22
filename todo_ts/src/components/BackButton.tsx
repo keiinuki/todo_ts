@@ -1,7 +1,12 @@
 import { memo } from "react"
 import { useHistory } from "react-router-dom";
 
-export const BackButton = memo((props) => {
+type Props = {
+  //onclick:() => void;
+  color?: string;
+}
+
+export const BackButton = memo((props:Props) => {
   const history = useHistory();
   const onClick = () => {
     history.push("/");

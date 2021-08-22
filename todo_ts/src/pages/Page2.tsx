@@ -21,8 +21,8 @@ export const Page2 = () => {
 
   const [name, setName] = useState("");
   const [id, setId] = useState("");  
-  const onChangeName = (e) => setName(e.target.value);
-  const onChangeId = (e) => setId(e.target.value);
+  const onChangeName = (e:any) => setName(e.target.value);
+  const onChangeId = (e:any) => setId(e.target.value);
 
   const onClick = useCallback(() => {
   console.log(name);

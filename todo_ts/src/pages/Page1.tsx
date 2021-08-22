@@ -6,8 +6,8 @@ import { useTodo } from "../Hooks/UseTodo";
 
 export const Page1 = () => {
   const { state } = useLocation();
-  const [word, setWord] = useState("");
-  const [post, setPost] = useState("");
+  const [word, setWord] = useState<string>("");
+  const [post, setPost] = useState<string>("");
   const { todoList, setTodoList, completeTodoList, setCompleteTodoList, addTodo, deleteTodo, completeTodo, backTodo } = useTodo();
 
   useEffect(() => {
@@ -17,23 +17,24 @@ export const Page1 = () => {
     });    
   },[]);  
 
-  const onChangeAdd = (e) => {    
+  const onChangeAdd = (e:any) => {    
     setWord( e.target.value )   
   };  
   const onClickAdd = () => {         
     addTodo(word);
     setWord("");
   };
-  const onClickDelete = (i) => {
+  const onClickDelete = (i:any) => {
     deleteTodo(i);
   };
-  const onClickComplete =(i) => {
+  const onClickComplete =(i:any) => {
     completeTodo(i);
   };  
-  const onClickBack = (i) => {
+  const onClickBack = (i:any) => {
     backTodo(i);
   };  
-  useEffect(() => {
+
+    useEffect(() => {
     if (state) {          
     setTodoList(state.todoList);    
     } if (state) {

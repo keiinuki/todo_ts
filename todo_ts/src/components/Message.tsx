@@ -1,5 +1,9 @@
 import { memo } from "react"
 
-export const Message = memo((props) => {
+type Props = {
+  color: string;
+}
+
+export const Message = memo((props:Props) => {
   return <p style={{ color: props.color }}>こんにちは！</p>
 });
