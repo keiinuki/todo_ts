@@ -1,0 +1,22 @@
+.container-style {
+  border: solid 1px #ddd;
+  text-align: center;
+  padding: auto;
+  background-color: rgb(182, 250, 165);
+  width: 600px;
+  height: auto;
+  margin: auto;
+}
+
+.ol-style  {
+  list-style-position: inside;
+  list-style-type: cjk-ideographic;
+  width: 70%;
+  text-align: justify;
+  padding: auto;
+  margin: auto;
+}
+
+.complete-style {
+  text-decoration:line-through red; 
+}
