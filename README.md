@@ -1,2 +1,0 @@
-# todo_ts
-TypeScriptのTODOアプリ
