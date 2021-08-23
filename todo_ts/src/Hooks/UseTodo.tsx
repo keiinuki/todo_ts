@@ -1,9 +1,9 @@
 import { useState,  useCallback } from "react";
 
-export const useTodo = () => {
-  const [todoList, setTodoList] = useState([""]);
-  const [completeTodoList, setCompleteTodoList] = useState([""]); 
-    
+export const useTodo = () => {  
+  const [todoList, setTodoList] = useState<string[]>([]);
+  const [completeTodoList, setCompleteTodoList] = useState<string[]>([]);   
+  
     //コンポーネントから受け取る「word」が引数、「word」を「todoList」の配列に渡す
     const addTodo = useCallback((word:string) => {         
     const newTodoList = [...todoList];

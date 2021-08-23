@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { BackButton } from "../components/BackButton";
 
 export const Page1DetailA = () => {  
-  const { state } = useLocation();
+  const { state } = useLocation<any>();
   const [todoList, setTodoList] = useState([]);
   const [completeTodoList, setCompleteTodoList] = useState([]);
 
