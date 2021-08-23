@@ -4,11 +4,9 @@ import { Router } from "./router/Router";
 
 
 export default function App () {
-  return (
-    
+  return (    
     <BrowserRouter>
       <Router />
-    </BrowserRouter>
-    
+    </BrowserRouter>    
     );
 };
