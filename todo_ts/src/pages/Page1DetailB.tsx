@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { BackButton } from "../components/BackButton";
 
 export const Page1DetailB = () => {
-  const { state } = useLocation<any>();
-  const [todoList, setTodoList] = useState([]);
-  const [completeTodoList, setCompleteTodoList] = useState([]);
+  const { state } = useLocation<{state:string[] } | any>();
+  const [todoList, setTodoList] = useState<string[]>([]);
+  const [completeTodoList, setCompleteTodoList] = useState<string[]>([]);
   console.log(completeTodoList);  
   
   useEffect(() => {

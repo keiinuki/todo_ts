@@ -5,7 +5,7 @@ import { BackButton } from "../components/BackButton";
 import { useTodo } from "../Hooks/UseTodo";
 
 export const Page1 = () => {
-  const { state } = useLocation<any>();
+  const { state } = useLocation<{state:string[] } | any>();
   const [word, setWord] = useState<string>("");
   const [post, setPost] = useState<string>("");
   const { todoList, setTodoList, completeTodoList, setCompleteTodoList, addTodo, deleteTodo, completeTodo, backTodo } = useTodo();
