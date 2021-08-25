@@ -5,11 +5,11 @@ import { BackButton } from "../components/BackButton";
 import { useTodo } from "../Hooks/UseTodo";
 
 export const Page1 = () => {
-  const { state } = useLocation<{state:string[] } | any>();
+  const { state } = useLocation<{todoList:string[]; completeTodoList:string[];}>();
   const [word, setWord] = useState<string>("");
   const [post, setPost] = useState<string>("");
   const { todoList, setTodoList, completeTodoList, setCompleteTodoList, addTodo, deleteTodo, completeTodo, backTodo } = useTodo();
-
+  
   useEffect(() => {
     axios.get("https://jsonplaceholder.typicode.com/todos/29/")
     .then((response) => {      
@@ -17,26 +17,26 @@ export const Page1 = () => {
     });    
   },[]);  
 
-  const onChangeAdd = (e:any) => {    
+  const onChangeAdd = (e: React.ChangeEvent<HTMLInputElement>) => {    
     setWord( e.target.value )   
   };  
   const onClickAdd = () => {         
     addTodo(word);
     setWord("");
   };
-  const onClickDelete = (i:any) => {
+  const onClickDelete = (i:number) => {
     deleteTodo(i);
   };
-  const onClickComplete =(i:any) => {
+  const onClickComplete =(i:number) => {
     completeTodo(i);
   };  
-  const onClickBack = (i:any) => {
+  const onClickBack = (i:number) => {
     backTodo(i);
   };  
 
     useEffect(() => {
     if (state) {          
-    setTodoList(state.todoList);    
+    setTodoList(state.todoList);      
     } if (state) {
     setCompleteTodoList(state.completeTodoList);
     }

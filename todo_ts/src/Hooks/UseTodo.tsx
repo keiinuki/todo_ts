@@ -13,7 +13,7 @@ export const useTodo = () => {
   },[todoList]);
   
   //「todoList」の中から該当する「index (i)」をspliceで抜き出す
-  const deleteTodo = useCallback((i) => {
+  const deleteTodo = useCallback((i:number) => {
     const newTodoList = [...todoList];
     newTodoList.splice(i,1);
     setTodoList(newTodoList);
@@ -21,7 +21,7 @@ export const useTodo = () => {
   },[todoList]);
   
   //「todoList」の中から該当する「index (i)」をspliceで抜き出して、それを「completeTodoList」の配列に入れる
-  const completeTodo = useCallback((i) => {
+  const completeTodo = useCallback((i:number) => {
     const newTodoList = [...todoList];
     newTodoList.splice(i,1);    
     const newCompleteTodoList = [...completeTodoList, todoList[i]]; 
@@ -32,7 +32,7 @@ export const useTodo = () => {
   },[todoList, completeTodoList]);
 
   //「completeTodoList」の中から該当する「index (i)」をspliceで抜き出して、それを「todoList」の配列に入れる
-  const backTodo = useCallback((i) => {
+  const backTodo = useCallback((i:number) => {
     const newCompleteTodoList = [...completeTodoList];
     newCompleteTodoList.splice(i,1);
     const newTodoList = [...todoList, completeTodoList[i]];      
