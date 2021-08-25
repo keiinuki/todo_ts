@@ -1,8 +1,13 @@
-import { useState,  useCallback } from "react";
+//import { useState, useCallback } from "react";
+import { useCallback } from "react";
+import { useRecoilState } from "recoil";
+import { todoListState, completeTodoListState } from "./atom"
 
 export const useTodo = () => {  
-  const [todoList, setTodoList] = useState<string[]>([]);
-  const [completeTodoList, setCompleteTodoList] = useState<string[]>([]);   
+  const [todoList, setTodoList] = useRecoilState(todoListState);
+  const [completeTodoList, setCompleteTodoList] = useRecoilState(completeTodoListState);  
+  //const [todoList, setTodoList] = useState<string[]>([]);
+  //const [completeTodoList, setCompleteTodoList] = useState<string[]>([]);   
   
     //コンポーネントから受け取る「word」が引数、「word」を「todoList」の配列に渡す
     const addTodo = useCallback((word:string) => {         

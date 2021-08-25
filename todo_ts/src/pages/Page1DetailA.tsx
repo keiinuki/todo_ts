@@ -1,11 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BackButton } from "../components/BackButton";
+import { useRecoilState } from "recoil";
+import { todoListState, completeTodoListState } from "../Hooks/atom";
 
 export const Page1DetailA = () => {  
-  const { state } = useLocation<{state:string[] } | any>();
-  const [todoList, setTodoList] = useState<string[]>([]);
-  const [completeTodoList, setCompleteTodoList] = useState<string[]>([]);
+  const { state } = useLocation<{todoList:string[]; completeTodoList:string[];}>();
+  //const [todoList, setTodoList] = useState<string[]>([]);
+  const [todoList, setTodoList] = useRecoilState(todoListState);
+  //const [completeTodoList, setCompleteTodoList] = useState<string[]>([]);
+  const [completeTodoList, setCompleteTodoList] = useRecoilState(completeTodoListState);
 
   useEffect(() => {
     if (state.todoList) {
