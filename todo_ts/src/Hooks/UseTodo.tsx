@@ -1,7 +1,7 @@
 //import { useState, useCallback } from "react";
 import { useCallback } from "react";
 import { useRecoilState } from "recoil";
-import { todoListState, completeTodoListState } from "./atom"
+import { todoListState, completeTodoListState } from "../store/atom"
 
 export const useTodo = () => {  
   const [todoList, setTodoList] = useRecoilState(todoListState);

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { BackButton } from "../components/BackButton";
 import { useRecoilState } from "recoil";
-import { todoListState, completeTodoListState } from "../Hooks/atom";
+import { todoListState, completeTodoListState } from "../store/atom";
 
 export const Page1DetailB = () => {
   const { state } = useLocation<{todoList:string[]; completeTodoList:string[];}>();
