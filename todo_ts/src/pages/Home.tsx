@@ -13,7 +13,9 @@ export const Home = () => {
       <div>
         <Link to="/page1">「やらなあかんこと」はこちら</Link>
         <br />
-        <Link to="/page2">「登録してな」はこちら</Link>      
+        <Link to="/page2">「登録してな」はこちら</Link>
+        <br />
+        <Link to="/page3">「ストレージ練習」はこちら</Link>      
       </div>
         <br/>
       <div>

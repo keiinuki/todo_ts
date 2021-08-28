@@ -2,6 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Page1 } from "../pages/Page1";
 import { Page2 } from "../pages/Page2";
+import { Page3 } from "../pages/Page3";
 import { Page1DetailA } from "../pages/Page1DetailA";
 import { Page1DetailB } from "../pages/Page1DetailB";
 import { Parameter } from "../pages/Parameter";
@@ -48,6 +49,9 @@ export const Router = () => {
           </Switch>
         )}
       ></Route>
+      <Route path="/Page3">
+        <Page3 />
+      </Route>
       <Route path="/*">
         <Page404 />
       </Route>

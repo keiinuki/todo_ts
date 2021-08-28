@@ -19,10 +19,10 @@ export const Page2 = () => {
 
   
 
-  const [name, setName] = useState("");
-  const [id, setId] = useState("");  
-  const onChangeName = (e:any) => setName(e.target.value);
-  const onChangeId = (e:any) => setId(e.target.value);
+  const [name, setName] = useState<string>("");
+  const [id, setId] = useState<string>("");  
+  const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
+  const onChangeId = (e: React.ChangeEvent<HTMLInputElement>) => setId(e.target.value);
 
   const onClick = useCallback(() => {
   console.log(name);
