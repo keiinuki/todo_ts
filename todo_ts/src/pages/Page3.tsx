@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { KEYS, setItem, getItem, removeItem  } from "../store/LocalStorage";
+import { KEYS, setItem, getItem, removeItem  } from "../utils/LocalStorage";
 import { Link } from "react-router-dom"
 
 export const Page3 = () => {

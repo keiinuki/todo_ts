@@ -1,6 +1,7 @@
-export enum KEYS{
-  SAMPLE_TEXT = "SAMPLE_TEXT",
-};
+export const KEYS = {
+  SAMPLE_TEXT: "SAMPLE_TEXT",
+} as const;
+type KEYS = typeof KEYS[keyof typeof KEYS];
 
 export const getItem = (key:KEYS) =>  {
   const value = localStorage.getItem(KEYS.SAMPLE_TEXT);
